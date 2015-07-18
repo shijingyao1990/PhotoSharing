@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PhotosSharing Website</title>
+	<h1 class = "title"> All Users who share the photos</h1>
+</head>
+<body>
+	<% @users.each do |user| %>
+	<div class="user_id"><h3><%= user.id %></h3></div>
+	<div class = "firstname"><p><%= user.first_name %></p></div>
+	<div class = "lastname"><p><%= user.last_name %></p></div>
+	<div class = "link"><p><%= link_to "#{user.first_name},#{user.last_name}", user %></p></div>
+	<% end %>
+</body>
+</html>

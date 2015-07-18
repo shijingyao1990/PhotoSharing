@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Individual Website</title>
+	
+	<div class = "title"><h1> User: <%= "#{@user.first_name}, #{@user.last_name}" %></h1></div>
+	
+</head>
+<body>
+	<% @photos.each do |photo| %>
+		<div class ="Photo"><%= image_tag(photo.file_name) %></div>
+		<div class = "datetime"><h3><%= photo.created_at %></h3></div>
+		<div class = "filename"><h3><%= photo.file_name %></h3></div>
+		<div class="link"><h3><%= link_to "See the Comments ", user_photo_path(@user,photo) %></h3></div>
+	<% end %>
+</body>
+</html>
